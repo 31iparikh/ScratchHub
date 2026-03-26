@@ -24,80 +24,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <body>
     <div class="hexagon-container" id="hexContainer"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -129,59 +57,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="content-overlay">
         <header class="scratch-header">
             <h1 class="scratch-title">🎯ScratchHub</h1>
             <p class="scratch-tagline">Play the Best Unblocked Scratch Games</p>
         </header>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -206,30 +86,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <section class="page active" id="home">
             <div class="user-bar">
                 <span id="currentUser">Guest</span>
@@ -244,55 +100,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <a class="cta-btn" href="#games">🎮 Jump into games</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -318,55 +126,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="recent-row" id="recentRow">Recently played: <span id="recentGames">None yet</span></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -436,206 +196,106 @@
 
 
 
+        <section class="page" id="settings">
+            <h2 class="section-heading">⚙️ Settings</h2>
+            <div class="settings-grid">
+                <div class="settings-card">
+                    <h3>👤 Profile</h3>
+                    <div class="setting-item">
+                        <label>Username</label>
+                        <input type="text" id="settingsUsername" placeholder="Enter username">
+                    </div>
+                    <div class="setting-item">
+                        <label>Email</label>
+                        <input type="email" id="settingsEmail" placeholder="Enter email">
+                    </div>
+                    <button id="saveProfileBtn" class="cta-btn">Save Profile</button>
+                </div>
 
 
+                <div class="settings-card">
+                    <h3>🎨 Appearance</h3>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="darkModeToggle"> Dark Mode
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>Theme Color</label>
+                        <select id="themeColor">
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="purple">Purple</option>
+                            <option value="red">Red</option>
+                        </select>
+                    </div>
+                </div>
 
 
+                <div class="settings-card">
+                    <h3>🎵 Music & Audio</h3>
+                    <div class="setting-item">
+                        <label>Master Volume</label>
+                        <input type="range" id="masterVolumeSlider" min="0" max="100" value="70">
+                        <span id="masterVolumeValue">70%</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>Music Volume</label>
+                        <input type="range" id="musicVolumeSlider" min="0" max="100" value="60">
+                        <span id="musicVolumeValue">60%</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>Sound Effects Volume</label>
+                        <input type="range" id="sfxVolumeSlider" min="0" max="100" value="80">
+                        <span id="sfxVolumeValue">80%</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="backgroundMusicToggle" checked> Background Music
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="gameSoundsToggle" checked> Game Sounds
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>Music Theme</label>
+                        <select id="musicTheme">
+                            <option value="electronic">Electronic</option>
+                            <option value="ambient">Ambient</option>
+                            <option value="upbeat">Upbeat</option>
+                            <option value="calm">Calm</option>
+                        </select>
+                    </div>
+                    <button id="startAudioBtn" class="small-btn" style="margin-top:8px;">▶️ Start Audio</button>
+                    <p id="audioStatus" style="color:#ffcc00; font-size:0.9rem; margin-top:6px;">Audio initialisation status: waiting...</p>
+                </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       <!-- SETTINGS TAB -->
-<section class="page" id="settings">
-    <h2 class="section-heading">⚙️ Settings</h2>
-
-    <div class="settings-grid">
-
-        <!-- PROFILE CARD -->
-        <div class="settings-card">
-            <h3>👤 Profile</h3>
-            <div class="setting-item">
-                <label>Username</label>
-                <input type="text" id="settingsUsername" placeholder="Enter username">
             </div>
-            <div class="setting-item">
-                <label>Email</label>
-                <input type="email" id="settingsEmail" placeholder="Enter email">
+        </section>
+
+
+        <section class="page" id="create">
+            <h2 class="section-heading">🎨 Create Your Game</h2>
+            <div class="create-container" style="max-width: 600px; margin: 40px auto; text-align: center;">
+                <div style="background: linear-gradient(135deg, rgba(0, 255, 200, 0.1), rgba(100, 0, 255, 0.1)); border: 2px solid rgba(0, 255, 200, 0.3); border-radius: 15px; padding: 40px 30px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #00FFC8; font-size: 24px; margin-bottom: 15px;">Ready to Create?</h3>
+                    <p style="color: #AAA; font-size: 14px; margin-bottom: 10px; line-height: 1.6;">
+                        Use the Scratch visual programming editor to design and build your own interactive games and animations. No coding experience needed!
+                    </p>
+                    <p style="color: #888; font-size: 12px; margin-bottom: 25px;">
+                        ✨ Drag and drop blocks • 🎯 Create sprites • 🎵 Add sounds • 🎨 Customize designs
+                    </p>
+                    <a href="https://scratch.mit.edu/projects/1294696634/editor" target="_blank" class="cta-btn" style="display: inline-block; padding: 12px 24px; font-size: 16px; text-decoration: none; border-radius: 8px;">
+                        🚀 Launch Scratch Editor
+                    </a>
+                    <p style="color: #666; font-size: 11px; margin-top: 20px;">
+                        Opens in a new window • Powered by MIT Scratch
+                    </p>
+                </div>
             </div>
-            <button id="saveProfileBtn" class="cta-btn">Save Profile</button>
-        </div>
-
-        <!-- APPEARANCE CARD -->
-        <div class="settings-card">
-            <h3>🎨 Appearance</h3>
-            <div class="setting-item">
-                <label>
-                    <input type="checkbox" id="darkModeToggle"> Dark Mode
-                </label>
-            </div>
-            <div class="setting-item">
-                <label>Theme Color</label>
-                <select id="themeColor">
-                    <option value="blue">Blue</option>
-                    <option value="green">Green</option>
-                    <option value="purple">Purple</option>
-                    <option value="red">Red</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- ⭐ AUDIO SETTINGS CARD (NEW) -->
-        <div class="settings-card">
-            <h3>🎵 Music & Audio</h3>
-
-            <div class="setting-item">
-                <label>Master Volume</label>
-                <input type="range" id="masterVolumeSlider" min="0" max="100" value="70">
-                <span id="masterVolumeValue">70%</span>
-            </div>
-
-            <div class="setting-item">
-                <label>Music Volume</label>
-                <input type="range" id="musicVolumeSlider" min="0" max="100" value="60">
-                <span id="musicVolumeValue">60%</span>
-            </div>
-
-            <div class="setting-item">
-                <label>
-                    <input type="checkbox" id="backgroundMusicToggle" checked> Background Music
-                </label>
-            </div>
-
-            <div class="setting-item">
-                <button id="startAudioBtn" class="small-btn" style="margin-top:8px;">▶️ Start Audio</button>
-                <p id="audioStatus" style="color:#ffcc00; font-size:0.9rem; margin-top:6px;">
-                    Audio initialisation status: waiting...
-                </p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-
-
-<section class="page" id="create">
-    <h2 class="section-heading">🎨 Create Your Game</h2>
-
-    <div class="create-container" style="max-width: 600px; margin: 40px auto; text-align: center;">
-        <div style="background: linear-gradient(135deg, rgba(0, 255, 200, 0.1), rgba(100, 0, 255, 0.1)); border: 2px solid rgba(0, 255, 200, 0.3); border-radius: 15px; padding: 40px 30px; backdrop-filter: blur(10px);">
-            <h3 style="color: #00FFC8; font-size: 24px; margin-bottom: 15px;">Ready to Create?</h3>
-            <p style="color: #AAA; font-size: 14px; margin-bottom: 10px; line-height: 1.6;">
-                Use the Scratch visual programming editor to design and build your own interactive games and animations. No coding experience needed!
-            </p>
-            <p style="color: #888; font-size: 12px; margin-bottom: 25px;">
-                ✨ Drag and drop blocks • 🎯 Create sprites • 🎵 Add sounds • 🎨 Customize designs
-            </p>
-            <a href="https://scratch.mit.edu/projects/1294696634/editor" target="_blank" class="cta-btn" style="display: inline-block; padding: 12px 24px; font-size: 16px; text-decoration: none; border-radius: 8px;">
-                🚀 Launch Scratch Editor
-            </a>
-            <p style="color: #666; font-size: 11px; margin-top: 20px;">
-                Opens in a new window • Powered by MIT Scratch
-            </p>
-        </div>
-    </div>
-</section>
-
-
-
-
-<script>
-const audio = new Audio("Untitled.mp3");
-audio.loop = true;
-
-const masterSlider = document.getElementById("masterVolumeSlider");
-const musicSlider = document.getElementById("musicVolumeSlider");
-const toggle = document.getElementById("backgroundMusicToggle");
-const startBtn = document.getElementById("startAudioBtn");
-const statusText = document.getElementById("audioStatus");
-
-masterSlider.oninput = () => {
-    document.getElementById("masterVolumeValue").textContent = masterSlider.value + "%";
-    updateVolume();
-};
-
-musicSlider.oninput = () => {
-    document.getElementById("musicVolumeValue").textContent = musicSlider.value + "%";
-    updateVolume();
-};
-
-function updateVolume() {
-    const master = masterSlider.value / 100;
-    const music = musicSlider.value / 100;
-    audio.volume = master * music;
-}
-
-toggle.onchange = () => {
-    if (toggle.checked) {
-        audio.play();
-        statusText.textContent = "Audio initialisation status: playing";
-    } else {
-        audio.pause();
-        statusText.textContent = "Audio initialisation status: paused";
-    }
-};
-
-startBtn.onclick = () => {
-    audio.play()
-        .then(() => {
-            statusText.textContent = "Audio initialisation status: playing";
-        })
-        .catch(() => {
-            statusText.textContent = "Audio initialisation status: user interaction required";
-        });
-};
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </section>
 
 
 
@@ -654,18 +314,6 @@ startBtn.onclick = () => {
                 <li><strong>5.</strong> PuzzleMaster - 15,740 points</li>
             </ul>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -689,30 +337,6 @@ startBtn.onclick = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <footer class="scratch-footer">
             <p>All games are 100% unblocked and playable on any device 🎮</p>
         </footer>
@@ -722,78 +346,6 @@ startBtn.onclick = () => {
     </small>
 </footer>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -843,153 +395,9 @@ startBtn.onclick = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
