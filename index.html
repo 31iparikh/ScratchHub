@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScratchHub - Play Unblocked Scratch Games</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <div class="hexagon-container" id="hexContainer"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="auth-overlay" id="authOverlay" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+        <div class="auth-card">
+            <h2 id="authTitle">Sign In / Sign Up</h2>
+            <div class="auth-switch">
+                <button id="btnSignIn" class="auth-mode active">Sign In</button>
+                <button id="btnSignUp" class="auth-mode">Sign Up</button>
+            </div>
+            <div class="auth-form">
+                <label>Username<input id="authUser" type="text" placeholder="Enter username"></label>
+                <label>Password<input id="authPass" type="password" placeholder="Enter password"></label>
+                <button id="authSubmit" class="cta-btn">Continue</button>
+                <p id="authMessage" class="auth-message"></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="content-overlay">
+        <header class="scratch-header">
+            <h1 class="scratch-title">🎯ScratchHub</h1>
+            <p class="scratch-tagline">Play the Best Unblocked Scratch Games</p>
+        </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <nav class="page-nav" aria-label="Main pages">
+            <button class="page-btn active" data-page="home">Home</button>
+            <button class="page-btn" data-page="games">Games</button>
+            <button class="page-btn" data-page="settings">Settings</button>
+            <button class="page-btn" data-page="create">Create</button>
+            <button class="page-btn" data-page="topPlayers">Top Players</button>
+            <button class="page-btn" data-page="ai">🤖 Ask AI</button>
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="page active" id="home">
+            <div class="user-bar">
+                <span id="currentUser">Guest</span>
+                <button id="logoutBtn" class="small-btn">Sign Out</button>
+            </div>
+            <div class="status-badge" id="statusBadge">✨ Live: 4 games | 8,724 players online</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <a class="cta-btn" href="#games">🎮 Jump into games</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="action-row">
+            <div class="filter-group" id="filterGroup">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="arcade">Arcade</button>
+                <button class="filter-btn" data-filter="puzzle">Puzzle</button>
+                <button class="filter-btn" data-filter="strategy">Strategy</button>
+            </div>
+            <button class="random-btn" id="randomGameBtn">🎯 Random Challenge</button>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="recent-row" id="recentRow">Recently played: <span id="recentGames">None yet</span></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="games-grid" id="games">
+            <div class="game-card card-red game-embed-card" data-category="arcade" data-rating="4.9" data-plays="12832" onclick="openGame('https://scratch.mit.edu/projects/1292909401/embed', '🎮 Geometry Dash Wave')">
+                <div class="card-meta">⏱ 3 min • ⭐ 4.9 • 🔥 12.8k plays</div>
+                <div class="card-icon">🎮</div>
+                <h3>Geometry Dash Wave</h3>
+                <p>Click to play this intense geometry game!</p>
+            </div>
+   
+            <div class="game-card card-orange game-embed-card" data-category="arcade" data-rating="4.7" data-plays="9840" onclick="openGame('https://scratch.mit.edu/projects/1293362123/embed', '🏓Pong Ping')">
+                <div class="card-meta">⏱ 2 min • ⭐ 4.7 • 🔥 9.8k plays</div>
+                <div class="card-icon">🏓</div>
+                <h3>Pong Ping</h3>
+                <p>Survive the ultimate Pong Ping challenge!</p>
+            </div>
+           
+            <div class="game-card card-yellow" data-category="strategy" data-rating="4.6" data-plays="7600" onclick="openGame('https://scratch.mit.edu/projects/1078734179/embed', '♟️Scratch Chess')">
+                <div class="card-meta">⏱ 5 min • ⭐ 4.6 • 🔥 7.6k plays</div>
+                <div class="card-icon">♟️</div>
+                <h3>Scratch Chess</h3>
+                <p>Play Chess On Scratch!</p>
+            </div>
+           
+            <div class="game-card card-green" data-category="arcade" data-rating="4.4" data-plays="6480" onclick="openGame('https://scratch.mit.edu/projects/983655397/embed', '👾Minecraft Dash v3')">
+                <div class="card-meta">⏱ 4 min • ⭐ 4.4 • 🔥 6.5k plays</div>
+                <div class="card-icon">👾</div>
+                <h3>Minecraft Dash v3</h3>
+                <p>Geometry Dash But Minecraft</p>
+            </div>
+           
+            <div class="game-card card-blue" data-category="puzzle" data-rating="4.5" data-plays="5230" onclick="openGame('https://scratch.mit.edu/projects/1051860555/embed', '🍕Pizza Shop Madness')">
+                <div class="card-meta">⏱ 6 min • ⭐ 4.5 • 🔥 5.2k plays</div>
+                <div class="card-icon">🍕</div>
+                <h3>Pizza Shop Madness</h3>
+                <p>Run your own pizza restaurant!</p>
+            </div>
+           
+            <div class="game-card card-yellow" data-category="puzzle" data-rating="4.8" data-plays="8920" onclick="openGame('https://scratch.mit.edu/projects/224089/embed', '🧠Trivia Master')">
+                <div class="card-meta">⏱ 5 min • ⭐ 4.8 • 🔥 8.9k plays</div>
+                <div class="card-icon">🧠</div>
+                <h3>Trivia Master</h3>
+                <p>Test your knowledge with challenging trivia questions!</p>
+            </div>
+           
+            <div class="game-card card-blue" data-category="puzzle" data-rating="4.6" data-plays="7560" onclick="openGame('https://scratch.mit.edu/projects/214903448/embed', '🎯Jeopardy Challenge')">
+                <div class="card-meta">⏱ 8 min • ⭐ 4.6 • 🔥 7.6k plays</div>
+                <div class="card-icon">🎯</div>
+                <h3>Jeopardy Challenge</h3>
+                <p>Answer questions and earn points in this classic game show!</p>
+            </div>
+        </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="page" id="settings">
+            <h2 class="section-heading">⚙️ Settings</h2>
+            <div class="settings-grid">
+                <div class="settings-card">
+                    <h3>👤 Profile</h3>
+                    <div class="setting-item">
+                        <label>Username</label>
+                        <input type="text" id="settingsUsername" placeholder="Enter username">
+                    </div>
+                    <div class="setting-item">
+                        <label>Email</label>
+                        <input type="email" id="settingsEmail" placeholder="Enter email">
+                    </div>
+                    <button id="saveProfileBtn" class="cta-btn">Save Profile</button>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="settings-card">
+                    <h3>🎨 Appearance</h3>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="darkModeToggle"> Dark Mode
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>Theme Color</label>
+                        <select id="themeColor">
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="purple">Purple</option>
+                            <option value="red">Red</option>
+                        </select>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="settings-card">
+                    <h3>🎵 Music & Audio</h3>
+                    <div class="setting-item">
+                        <label>Master Volume</label>
+                        <input type="range" id="masterVolumeSlider" min="0" max="100" value="70">
+                        <span id="masterVolumeValue">70%</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>Music Volume</label>
+                        <input type="range" id="musicVolumeSlider" min="0" max="100" value="60">
+                        <span id="musicVolumeValue">60%</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>Sound Effects Volume</label>
+                        <input type="range" id="sfxVolumeSlider" min="0" max="100" value="80">
+                        <span id="sfxVolumeValue">80%</span>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="backgroundMusicToggle" checked> Background Music
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="gameSoundsToggle" checked> Game Sounds
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>Music Theme</label>
+                        <select id="musicTheme">
+                            <option value="electronic">Electronic</option>
+                            <option value="ambient">Ambient</option>
+                            <option value="upbeat">Upbeat</option>
+                            <option value="calm">Calm</option>
+                        </select>
+                    </div>
+                    <button id="startAudioBtn" class="small-btn" style="margin-top:8px;">▶️ Start Audio</button>
+                    <p id="audioStatus" style="color:#ffcc00; font-size:0.9rem; margin-top:6px;">Audio initialisation status: waiting...</p>
+                </div>
+
+
+                <div class="settings-card">
+                    <h3>🤖 AI Assistant</h3>
+                    <div class="setting-item">
+                        <label>Google Gemini API Key</label>
+                        <input type="password" id="geminiApiKey" placeholder="Paste your API key here">
+                        <small style="color:#999; margin-top:5px; display:block;">Get it from <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:#00FFC8;">Google AI Studio</a> (free tier available)</small>
+                    </div>
+                    <button id="saveApiKeyBtn" class="cta-btn">Save API Key</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section class="page" id="create">
+            <h2 class="section-heading">🎨 Create Your Game</h2>
+            <div class="create-container" style="max-width: 600px; margin: 40px auto; text-align: center;">
+                <div style="background: linear-gradient(135deg, rgba(0, 255, 200, 0.1), rgba(100, 0, 255, 0.1)); border: 2px solid rgba(0, 255, 200, 0.3); border-radius: 15px; padding: 40px 30px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #00FFC8; font-size: 24px; margin-bottom: 15px;">Ready to Create?</h3>
+                    <p style="color: #AAA; font-size: 14px; margin-bottom: 10px; line-height: 1.6;">
+                        Use the Scratch visual programming editor to design and build your own interactive games and animations. No coding experience needed!
+                    </p>
+                    <p style="color: #888; font-size: 12px; margin-bottom: 25px;">
+                        ✨ Drag and drop blocks • 🎯 Create sprites • 🎵 Add sounds • 🎨 Customize designs
+                    </p>
+                    <a href="https://scratch.mit.edu/projects/1294696634/editor" target="_blank" class="cta-btn" style="display: inline-block; padding: 12px 24px; font-size: 16px; text-decoration: none; border-radius: 8px;">
+                        🚀 Launch Scratch Editor
+                    </a>
+                    <p style="color: #666; font-size: 11px; margin-top: 20px;">
+                        Opens in a new window • Powered by MIT Scratch
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="page" id="topPlayers">
+            <h2 class="section-heading">Top Players</h2>
+            <ul class="leaderboard">
+                <li><strong>1.</strong> AceGamer - 21,409 points</li>
+                <li><strong>2.</strong> NeonNinja - 19,878 points</li>
+                <li><strong>3.</strong> PixelPro - 18,234 points</li>
+                <li><strong>4.</strong> GeoDash - 16,999 points</li>
+                <li><strong>5.</strong> PuzzleMaster - 15,740 points</li>
+            </ul>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="page" id="ai">
+            <h2 class="section-heading">🤖 ScratchHub Assistant</h2>
+            <p style="color: #aaa; margin-bottom: 20px;">Ask questions about ScratchHub features, games, and how to use the platform</p>
+            <div class="ai-chat-container">
+                <div class="chat-messages" id="chatMessages"></div>
+                <div class="chat-input-area">
+                    <input type="text" id="chatInput" class="chat-input" placeholder="Ask about ScratchHub... (How do I play games? How to create an account? etc)" />
+                    <button id="sendButton" class="send-btn">Send</button>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <footer class="scratch-footer">
+            <p>All games are 100% unblocked and playable on any device 🎮</p>
+        </footer>
+        <footer>
+    <small>
+        &copy; <span id="year"></span> ScratchHub. All Rights Reserved for Scratch.mit.edu.
+    </small>
+</footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Game Modal for Embedded Game -->
+    <div class="game-modal" id="gameModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeGameModal()">&times;</button>
+            <h2 class="modal-title" id="modalTitle">🎮 Play Game</h2>
+            <div class="game-embed-container" id="embedContainer">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
